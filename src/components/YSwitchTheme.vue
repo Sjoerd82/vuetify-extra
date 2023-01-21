@@ -19,7 +19,7 @@
                     class="mb-3 text-subtitle-2"
                     :style="`color:${theme.text}`"
                 >
-                    {{ theme.title }}
+                    {{ translation(`theme.${theme.name}`) }}
                 </div>
 
                 <div>
@@ -35,48 +35,55 @@
 <script setup lang="ts">
     import type { ThemeDefinition } from 'vuetify'
 
+    let hasCustom = false
+
     const props = defineProps<{
         modelValue?: string
         themes: Record<string, ThemeDefinition>
-        activeTheme?: string
         translation?: any
     }>()
 
     const emit = defineEmits<{
         (e: 'update:modelValue', value: string): void
     }>()
-    //const emit = defineEmits<{
-    //    (e: 'change', value: string): void
-    //}>()
 
     interface Theme {
         name: string,
-        title: string,
         variant: string,
         background: string,
         primary: string,
         secondary: string,
         text: string,
         dark: boolean,
+        isSystem: boolean,
     }
 
-    // Themes; computed, in case language changes
     let arrThemes: Array<Theme> = []
-    Object.entries(props.themes).forEach(([themeName,themeDef]) => {
-        console.log('theme',themeName,themeDef)
-        arrThemes.push({
-            name: themeName,
-            title: props.translation(`theme.${themeName}`),
-            variant: (themeName == props.activeTheme) ? 'outlined' : '',
-            background: themeDef.colors.background,
-            primary: themeDef.colors.primary,
-            secondary: themeDef.colors.secondary,
-            text: (themeDef.dark) ? '#ffffff' : '#000000', // We have no access to the calculated "on-background" value, it seems
-            dark: themeDef.dark,
+
+        Object.entries(props.themes).forEach(([themeName,themeDef]) => {
+            console.log('theme',themeName,themeDef)
+
+            const isSystem = (themeName == 'light' || themeName == 'dark')
+            hasCustom = hasCustom || isSystem
+
+            arrThemes.push({
+                name: themeName,
+                variant: (themeName == props.modelValue) ? 'outlined' : '',
+                background: themeDef.colors.background,
+                primary: themeDef.colors.primary,
+                secondary: themeDef.colors.secondary,
+                text: (themeDef.dark) ? '#ffffff' : '#000000', // We have no access to the calculated "on-background" value, it seems
+                dark: themeDef.dark,
+                isSystem: isSystem
+            })
         })
-    })
+
+    if (hasCustom) {
+        arrThemes = arrThemes.filter(o => o.isSystem == false)
+    }
 
     const setTheme = (themeName:string) => {
         emit('update:modelValue', themeName)
     }
+
 </script>

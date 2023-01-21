@@ -16,7 +16,7 @@
                 style="margin-top:-8px;"
                 :country="item.raw.flagCode"
             />
-            <span v-if="prefix" class="mr-2">{{ prefix }}:</span>
+            <span v-if="prefixInner" class="mr-2">{{ prefixInner }}:</span>
             <span>{{ item.title }}</span>
             <CountryFlag
                 v-if="flagSelectLocation == 'right'"
@@ -58,7 +58,7 @@
     export interface Props {
         modelValue?: string
         languages: Array<Languages>
-        prefix?: string
+        prefixInner?: string
         flagSelectLocation?: "left" | "right" | "start" | "end" | "none"
         flagItemsLocation?: "left" | "right" | "start" | "end" | "none"
         round?: boolean
