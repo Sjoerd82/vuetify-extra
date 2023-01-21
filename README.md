@@ -6,7 +6,9 @@ This package contains two components:
 * Language (i18n) switcher
 * Vuetify theme switcher
 
-### Installation
+**This package is currently being developed. Do not install (yet..).**
+
+## Installation
 
 You can use this package with your exiting Vuetify 3 (Vue 3) project using your favorite package manager.
 
@@ -19,6 +21,7 @@ yarn add vuetify-extra
 # Language Switcher
 
 The language switcher displays a drop down (v-select) containing a list of languages to select from.
+
 ![Example](https://github.com/Sjoerd82/vuetify-extra/blob/main/doc/example-lang-1.png)
 ![Example](https://github.com/Sjoerd82/vuetify-extra/blob/main/doc/example-lang-2.png)
 
@@ -31,9 +34,6 @@ import 'vuetify-extra/styles.css'
 ```html
 <YSwitchLang
     :languages="languages"
-    :selection-prefix="t('site.language')"
-    naked
-    flag flag-right
     variant="solo"
     v-model="$i18n.locale"
 />
@@ -53,7 +53,7 @@ import 'vuetify-extra/styles.css'
 Please note that most of Vuetify's v-select (styling) properties can also be specified here and will be passed on to the underlying v-select. For example append-icon, autofocus, bg-color?, clearable, clear-icon, color, density, direction?, disabled, error, error-messages, focused, hide-details?, hide-no-data?, hide-selected, hint, label?, max-errors, menu-icon, messages, open-on-clear, persistent-clear?, persistent-hint, persistent-placeholder, placeholder, prefix, prepend-icon, prepend-inner-icon, readonly, reverse, suffix, and variant.
 
 ```js
-export const languages = [
+const languages = [
     {
         code: "en",
         name: "English",
