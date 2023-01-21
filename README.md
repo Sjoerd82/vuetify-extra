@@ -19,7 +19,8 @@ yarn add vuetify-extra
 ### Language Switcher
 
 The language switcher displays a drop down (v-select) containing a list of languages to select from.
-
+[[https://github.com/Sjoerd82/vuetify-extra/blob/main/doc/example-lang-1.png]]
+[[https://github.com/Sjoerd82/vuetify-extra/blob/main/doc/example-lang-2.png]]
 [[https://github.com/Sjoerd82/vuetify-extra/blob/main/doc/example-lang-1.png|alt=Example]]
 [[https://github.com/Sjoerd82/vuetify-extra/blob/main/doc/example-lang-2.png|alt=Example]]
 
