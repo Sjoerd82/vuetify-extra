@@ -1,10 +1,4 @@
-<!-- 
-    DEPENDENCIES:
-    - vue-country-flag-next
 
-    pnpm add -D vue-country-flag-next
-
--->
 <template>
     <v-select
         :class="{'nkd':naked}"
@@ -17,15 +11,15 @@
     >
         <template #selection="{ item }">
             <CountryFlag
-                v-if="flag && !flagRight"
+                v-if="flagSelectLocation == 'left' || flagSelectLocation == 'start'"
                 class="mr-2"
                 style="margin-top:-8px;"
                 :country="item.raw.flagCode"
             />
-            <span v-if="selectionPrefix" class="mr-2">{{ selectionPrefix }}:</span>
+            <span v-if="prefix" class="mr-2">{{ prefix }}:</span>
             <span>{{ item.title }}</span>
             <CountryFlag
-                v-if="flag && flagRight"
+                v-if="flagSelectLocation == 'right'"
                 class="ml-2"
                 style="margin-top:-8px; margin-right:-4px;"
                 :country="item.raw.flagCode"
@@ -39,7 +33,7 @@
             >
                 <template #prepend>
                     <CountryFlag
-                        v-if="flag || flagItems"
+                        v-if="flagItemsLocation == 'left' || flagItemsLocation == 'start'"
                         class="mr-2"
                         style="margin-top:-8px;"
                         :country="item.raw.flagCode"
@@ -64,31 +58,20 @@
     export interface Props {
         modelValue?: string
         languages: Array<Languages>
-        selectionPrefix?: string
-        flag?: boolean
-        flagRight?: boolean
-        flagItems?: boolean
+        prefix?: string
+        flagSelectLocation?: "left" | "right" | "start" | "end" | "none"
+        flagItemsLocation?: "left" | "right" | "start" | "end" | "none"
+        round?: boolean
         naked?: boolean
     }
 
     const props = withDefaults(defineProps<Props>(), {
-        flag: false,
-        flagRight: false,
-        flagItems: false,
+        flagSelectLocation: "left",
+        flagItemsLocation: "left",
+        round: false,
         naked: false,
     })
 
-    /*
-    const props = defineProps<{
-        modelValue?: string
-        languages: Array<Languages>
-        selectionPrefix?: string
-        flag?: boolean
-        flagRight?: boolean
-        flagItems?: boolean
-        naked?: boolean
-    }>()
-    */
     const emit = defineEmits<{
         (e: 'update:modelValue', value: string): void
     }>()
