@@ -16,19 +16,10 @@ pnpm add vuetify-extra
 yarn add vuetify-extra
 ```
 
-### Language Switcher
+# Language Switcher
 
 The language switcher displays a drop down (v-select) containing a list of languages to select from.
-![Example](https://github.com/Sjoerd82/vuetify-extra/blob/main/doc/example-lang-1.png)
-![Example](https://github.com/Sjoerd82/vuetify-extra/blob/main/doc/example-lang-2.png)
-![Example](/Sjoerd82/vuetify-extra/blob/main/doc/example-lang-1.png?raw=true)
-![Example](/Sjoerd82/vuetify-extra/blob/main/doc/example-lang-2.png?raw=true)
-![Example](/vuetify-extra/blob/main/doc/example-lang-1.png?raw=true)
-![Example](/vuetify-extra/blob/main/doc/example-lang-2.png?raw=true)
-![Example](/blob/main/doc/example-lang-1.png?raw=true)
-![Example](/blob/main/doc/example-lang-2.png?raw=true)
-![Example](/main/doc/example-lang-1.png?raw=true)
-![Example](/main/doc/example-lang-2.png?raw=true)
+
 ![Example](/doc/example-lang-1.png?raw=true)
 ![Example](/doc/example-lang-2.png?raw=true)
 
@@ -121,7 +112,7 @@ import { YSwitchLang } from "vuetify-extra"
 import 'vuetify-extra/styles.css'
 ```
 
-### Theme Switcher
+# Theme Switcher
 
 The theme switcher displays a list of 'style-cards' with swatches for the available Vuetify themes. If no custom themes are defined, the two default Vuetify themes can be selected (light, dark). If custom themes are defined, then the two default Vuetify themes will be hidden.
 
