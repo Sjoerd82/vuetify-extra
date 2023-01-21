@@ -1,6 +1,6 @@
 {
   "name": "vuetify-extra",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "exports": {
     ".": "./dist/index.js",
@@ -13,7 +13,6 @@
   "files": [
     "dist/*"
   ],
-  "private": true,
   "scripts": {
     "dev": "vite",
     "build": "vite build && vue-tsc --emitDeclarationOnly && del dist\\*.css && copy src\\components\\style.css dist\\style.css",
@@ -44,5 +43,10 @@
   "peerDependencies": {
     "vue": "~3.x",
     "vuetify": "~3.x"
-  }
+  },
+  "license": "Unlicense license",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sjoerd82/vuetify-extra.git"
+  },
 }
