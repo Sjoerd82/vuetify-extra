@@ -6,7 +6,7 @@ This package contains two components:
 * Language (i18n) switcher
 * Vuetify theme switcher
 
-Please not that this is my first published packaged. I used it in various of my own projects. It is still very actively being developed, and will be for a large part of 2023. Updated versions may break you project; update this package with some caution.
+Please note that this is my first published packaged. I use it in various of my own projects (including Nuxt and Vitepress). It is still very actively being developed, and will be for a large part of 2023. Updated versions may break your project; update this package with some caution.
 
 Secondary goals of this project were to gain some experience reusing components and with bundlers. I'm very happy to hear if things can be improved upon. Issues, bugs, and feature requests can be submitted via Github.
 
