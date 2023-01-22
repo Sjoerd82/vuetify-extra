@@ -1,6 +1,6 @@
 {
   "name": "vuetify-extra",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "type": "module",
   "exports": {
     ".": "./dist/index.js",
@@ -50,5 +50,12 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Sjoerd82/vuetify-extra.git"
-  }
+  },
+  "keywords": [
+    "language",
+    "translation",
+    "theme",
+    "switch",
+    "vuetify"
+  ]
 }
