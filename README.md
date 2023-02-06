@@ -172,6 +172,7 @@ Colors that aren't changed are derived from either the dark or light palette, in
 The on-colors are automatically calculated by Vuetify based on the contrast ration, but can be overrided here as well.
 
 ```ts
+import { createVuetify, ThemeDefinition } from 'vuetify'
 const DarkTheme: ThemeDefinition = {
     dark: true,
     colors: {
